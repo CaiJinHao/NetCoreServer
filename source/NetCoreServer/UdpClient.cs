@@ -371,7 +371,7 @@ namespace NetCoreServer
 
         #endregion
 
-        #region Send/Receive data
+        #region Send/Recieve data
 
         // Receive and send endpoints
         EndPoint _receiveEndpoint;
@@ -457,7 +457,7 @@ namespace NetCoreServer
             try
             {
                 // Sent datagram to the server
-                long sent = Socket.SendTo(buffer, SocketFlags.None, endpoint);
+                long sent = Socket.SendTo(buffer.ToArray(), SocketFlags.None, endpoint);
                 if (sent > 0)
                 {
                     // Update statistic

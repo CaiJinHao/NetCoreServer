@@ -282,9 +282,7 @@ namespace NetCoreServer
 
         #region Session management
 
-        /// <summary>
-        /// Server sessions
-        /// </summary>
+        // Server sessions
         protected readonly ConcurrentDictionary<Guid, UdsSession> Sessions = new ConcurrentDictionary<Guid, UdsSession>();
 
         /// <summary>

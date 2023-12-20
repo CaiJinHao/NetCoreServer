@@ -61,7 +61,7 @@ namespace NetCoreServer
         /// <summary>
         /// Option: receive buffer size
         /// </summary>
-        public int OptionReceiveBufferSize { get; set; } = 8192;
+        public int OptionReceiveBufferSize { get; set; } = 24576;
         /// <summary>
         /// Option: send buffer limit
         /// </summary>
@@ -69,7 +69,7 @@ namespace NetCoreServer
         /// <summary>
         /// Option: send buffer size
         /// </summary>
-        public int OptionSendBufferSize { get; set; } = 8192;
+        public int OptionSendBufferSize { get; set; } = 24576;
 
         #region Connect/Disconnect session
 
@@ -218,7 +218,7 @@ namespace NetCoreServer
 
         #endregion
 
-        #region Send/Receive data
+        #region Send/Recieve data
 
         // Receive buffer
         private bool _receiving;
@@ -696,7 +696,7 @@ namespace NetCoreServer
         /// <param name="offset">Received buffer offset</param>
         /// <param name="size">Received buffer size</param>
         /// <remarks>
-        /// Notification is called when another part of buffer was received from the client
+        /// Notification is called when another chunk of buffer was received from the client
         /// </remarks>
         protected virtual void OnReceived(byte[] buffer, long offset, long size) {}
         /// <summary>
@@ -705,7 +705,7 @@ namespace NetCoreServer
         /// <param name="sent">Size of sent buffer</param>
         /// <param name="pending">Size of pending buffer</param>
         /// <remarks>
-        /// Notification is called when another part of buffer was sent to the client.
+        /// Notification is called when another chunk of buffer was sent to the client.
         /// This handler could be used to send another buffer to the client for instance when the pending size is zero.
         /// </remarks>
         protected virtual void OnSent(long sent, long pending) {}

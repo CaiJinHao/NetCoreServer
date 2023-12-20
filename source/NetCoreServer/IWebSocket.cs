@@ -2,9 +2,6 @@
 
 namespace NetCoreServer
 {
-    /// <summary>
-    /// WebSocket interface
-    /// </summary> 
     public interface IWebSocket
     {
         /// <summary>

@@ -91,7 +91,7 @@ namespace NetCoreServer
         /// <remarks>
         /// This option will set the listening socket's backlog size
         /// </remarks>
-        public int OptionAcceptorBacklog { get; set; } = 1024;
+        public int OptionAcceptorBacklog { get; set; } = 12288;
         /// <summary>
         /// Option: dual mode socket
         /// </summary>
@@ -152,11 +152,11 @@ namespace NetCoreServer
         /// <summary>
         /// Option: receive buffer size
         /// </summary>
-        public int OptionReceiveBufferSize { get; set; } = 8192;
+        public int OptionReceiveBufferSize { get; set; } = 24576;
         /// <summary>
         /// Option: send buffer size
         /// </summary>
-        public int OptionSendBufferSize { get; set; } = 8192;
+        public int OptionSendBufferSize { get; set; } = 24576;
 
         #region Start/Stop server
 
@@ -376,9 +376,7 @@ namespace NetCoreServer
 
         #region Session management
 
-        /// <summary>
-        /// Server sessions
-        /// </summary>
+        // Server sessions
         protected readonly ConcurrentDictionary<Guid, TcpSession> Sessions = new ConcurrentDictionary<Guid, TcpSession>();
 
         /// <summary>
