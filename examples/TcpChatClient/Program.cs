@@ -58,7 +58,7 @@ namespace TcpChatClient
                 address = args[0];
 
             // TCP server port
-            int port = 1111;
+            int port = 9111;
             if (args.Length > 1)
                 port = int.Parse(args[1]);
 
